@@ -7,11 +7,11 @@ services:
   - docker
 
 before_install:
-  - make
   - docker build -t  abhijo89/alpine-nginx-php7 .
   - docker ps -a
   
-
+cript:
+  - make run 
 
 after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";docker push abhijo89/alpine-nginx-php7;
