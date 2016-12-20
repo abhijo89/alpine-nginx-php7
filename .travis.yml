@@ -7,7 +7,8 @@ services:
   - docker
 
 before_install:
-  - docker build -t  abhijo89/alpine-nginx-php7
+  - make
+  - docker build -t  abhijo89/alpine-nginx-php7 .
   - docker ps -a
   
 
@@ -17,3 +18,6 @@ after_success:
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
     docker push USER/REPO;
     fi
+
+  email:
+    - ouncebook@gmail.com
