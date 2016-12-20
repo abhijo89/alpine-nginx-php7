@@ -64,6 +64,8 @@ RUN chown nginx:nginx /var/lib/php7/sessions
 # ADD SOURCE
 RUN mkdir -p /usr/share/nginx/html
 RUN chown -Rf nginx:nginx /usr/share/nginx/html
+# Copy nginx conf files
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
 RUN curl -o wordpress.tar.gz -SL https://wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz \
         && echo "$WORDPRESS_SHA1 *wordpress.tar.gz" | sha1sum -c - \
