@@ -1,6 +1,6 @@
 # Alpine-Linux + nginx + php7
 
-[![](https://images.microbadger.com/badges/image/shito/alpine-nginx-php7.svg)](https://microbadger.com/images/shito/alpine-nginx-php7 "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/abhijo89/alpine-nginx-php7.svg)](https://microbadger.com/images/abhijo89/alpine-nginx-php7 "Get your own image badge on microbadger.com")
 
 ## Including
  - NGINX 1.* (latest pkgs version)
