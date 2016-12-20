@@ -11,7 +11,7 @@ before_install:
   - docker ps -a
   
 script:
-  - make run 
+  - make  
 
 after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";docker push abhijo89/alpine-nginx-php7;
