@@ -1,5 +1,24 @@
 FROM shito/alpine-nginx:edge
 MAINTAINER Abhilash Joseph C <abhilash@softlinkweb.com>
+ARG VCS_REF
+# Metadata params
+ARG BUILD_DATE
+ARG VERSION
+ARG VCS_URL
+ARG VCS_REF
+
+# Metadata
+LABEL org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.name="WordPress" \
+      org.label-schema.url="http://softlinkweb.com" \
+      org.label-schema.vcs-url=$VCS_URL \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vendor="Ouncebook" \
+      org.label-schema.version=$VERSION \
+      org.label-schema.schema-version="1.0" \
+      com.alpine-nginx-php7.docker.dockerfile="/Dockerfile" \
+      com.alpine-nginx-php7.license="Apache-2.0"
+
 # Wordpress Version
 ENV WORDPRESS_VERSION 4.2.1
 ENV WORDPRESS_SHA1 c93a39be9911591b19a94743014be3585df0512f
@@ -51,7 +70,6 @@ RUN mkdir -p /var/lib/mysql && \
 
 VOLUME ["/var/lib/mysql", "/etc/mysql/conf.d/"]
 EXPOSE 3306
-CMD ["--skip-grant-tables"]
 
 # Install composer global bin
 RUN curl -sS https://getcomposer.org/installer | php \
