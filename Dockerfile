@@ -1,5 +1,5 @@
 FROM shito/alpine-nginx:edge
-MAINTAINER Sebastian Knoth <sk@bytepark.de>
+MAINTAINER Abhilash Joseph C <abhilash@softlinkweb.com>
 
 # Add PHP 7
 RUN apk upgrade -U && \
