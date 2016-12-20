@@ -14,10 +14,7 @@ before_install:
 
 
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker push USER/REPO;
-    fi
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";docker push abhijo89/alpine-nginx-php7;
 
   email:
     - ouncebook@gmail.com
